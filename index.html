@@ -93,6 +93,22 @@ function makeHearts(){
 }
 function toggleMusic(){
   const btn=document.getElementById('musicBtn');
+  const song=document.getElementById('song');
+  if(!song.paused){
+    song.pause();
+    btn.textContent='♫ پخش آهنگ مادر';
+    return;
+  }
+  song.play().then(()=>{
+    btn.textContent='■ توقف آهنگ';
+  }).catch(()=>{
+    btn.textContent='برای پخش دوباره بزنید';
+  });
+  song.onended=()=>{
+    btn.textContent='♫ پخش آهنگ مادر';
+  };
+}
+  const btn=document.getElementById('musicBtn');
   if(musicTimer){clearInterval(musicTimer);musicTimer=null;if(audioCtx){audioCtx.close();audioCtx=null;}btn.textContent='♫ پخش موسیقی آرام';return;}
   const AC=window.AudioContext||window.webkitAudioContext;
   if(!AC){btn.textContent='مرورگر از پخش صدا پشتیبانی نمی‌کند';return;}
