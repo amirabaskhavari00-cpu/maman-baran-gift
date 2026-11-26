@@ -108,8 +108,7 @@ function toggleMusic(){
     btn.textContent='♫ پخش آهنگ مادر';
   };
 }
-
-  if(musicTimer){clearInterval(musicTimer);musicTimer=null;if(audioCtx){audioCtx.close();audioCtx=null;}btn.textContent='♫ پخش موسیقی آرام';return;}
+clearInterval(musicTimer);musicTimer=null;if(audioCtx){audioCtx.close();audioCtx=null;}btn.textContent='♫ پخش موسیقی آرام';return;}
   const AC=window.AudioContext||window.webkitAudioContext;
   if(!AC){btn.textContent='مرورگر از پخش صدا پشتیبانی نمی‌کند';return;}
   audioCtx=new AC();let i=0;
