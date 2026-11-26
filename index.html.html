@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f8dce7">
+<title>برای مامان باران ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+:root{--pink:#f7d6e2;--deep:#a83d64;--gold:#c69a45;--cream:#fffaf5}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:Vazirmatn,Tahoma,sans-serif;color:#633044;background:radial-gradient(circle at top,#fff8fb,#f7dce7 55%,#f1c7d7);overflow-x:hidden}
+.wrap{max-width:720px;margin:auto;padding:28px 18px 50px;text-align:center}
+.kicker{color:#9d6b36;font-size:13px;letter-spacing:1px;margin:8px 0}
+h1{font-size:clamp(25px,6vw,38px);line-height:1.8;margin:4px 0 10px;color:#8f3155}
+.subtitle{font-size:15px;line-height:2;color:#805568;margin:0 auto 24px;max-width:520px}
+.scene{perspective:1000px;margin:28px auto 20px;width:min(100%,440px);height:300px;position:relative}
+.envelope{position:absolute;inset:48px 8px 0;background:linear-gradient(145deg,#f9c8da,#eaa8c1);border:2px solid #d7a45c;border-radius:12px;box-shadow:0 18px 40px #9a456333;cursor:pointer;transition:transform .7s;outline:none}
+.envelope:before{content:"";position:absolute;inset:0;background:linear-gradient(34deg,transparent 49.5%,#e7abc1 50%),linear-gradient(-34deg,transparent 49.5%,#f4bfd1 50%);border-radius:10px}
+.flap{position:absolute;left:0;right:0;top:0;height:58%;background:linear-gradient(145deg,#fce0e9,#e9abc2);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .8s;z-index:4;border-top:2px solid #d7a45c}
+.seal{position:absolute;z-index:5;top:43%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#f7d98e,#b77b2e);display:grid;place-items:center;color:#fff;font-size:29px;box-shadow:0 4px 12px #82431b55;border:2px solid #fbe4a9;transition:opacity .4s}
+.envelope-label{position:absolute;z-index:3;left:12px;right:12px;bottom:22px;font-weight:700;color:#77314c;line-height:2;font-size:16px}
+.open-hint{font-size:13px;color:#9a6075;margin-top:6px}
+.scene.open .flap{transform:rotateX(180deg);z-index:1}
+.scene.open .seal{opacity:0}
+.scene.open .envelope{transform:translateY(18px)}
+.letter{display:none;position:relative;margin:-8px auto 22px;width:min(94%,400px);padding:25px 22px;background:linear-gradient(#fffdf9,#fff7ed);border:1px solid #d8b66f;border-radius:10px;box-shadow:0 12px 30px #813c5522;line-height:2.25;animation:rise .8s ease both}
+.scene.open+.open-hint+.letter{display:block}
+.letter h2{font-size:23px;color:#a13d62;margin:0 0 12px}
+.letter p{margin:8px 0;font-size:15px}
+.signature{color:#a13d62;font-weight:800;margin-top:18px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:20px 0}
+button{font:600 14px Vazirmatn,Tahoma,sans-serif;border:1px solid #c69a45;border-radius:999px;padding:12px 18px;background:linear-gradient(135deg,#fff9ed,#f4d7a2);color:#70452a;cursor:pointer;box-shadow:0 5px 14px #8c4d3520}
+button.secondary{background:#fff8fb;border-color:#e5a9bf;color:#8f3155}
+.hidden-note{display:none;max-width:420px;margin:12px auto;padding:16px;background:#fff8fb;border:1px dashed #cf91a9;border-radius:12px;line-height:2;animation:rise .5s ease both}
+.hidden-note.show{display:block}
+.roses{font-size:24px;letter-spacing:8px;margin:18px 0}
+footer{font-size:12px;color:#956a7b;margin-top:32px}
+.heart{position:fixed;bottom:-30px;pointer-events:none;animation:float 7s linear forwards;z-index:9}
+@keyframes float{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:420px){.scene{height:270px}.envelope-label{font-size:14px}.letter{padding:20px 16px}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <div class="kicker">یک هدیه کوچک، از یک عشق بی‌انتها</div>
+  <h1>برای بهترین مامان دنیا 🌷</h1>
+  <p class="subtitle">مامان باران عزیزم، این پاکت پر از عشق و حرف‌هایی است که شاید هر روز به زبان نیاورم...</p>
+
+  <div class="scene" id="scene">
+    <div class="envelope" role="button" tabindex="0" aria-label="باز کردن پاکت" onclick="openLetter()" onkeydown="if(event.key==='Enter'||event.key===' '){openLetter()}">
+      <div class="flap"></div>
+      <div class="seal">♥</div>
+      <div class="envelope-label">تقدیم به بانوی بهشتی زندگی‌ام،<br> مادر عزیزم باران</div>
+    </div>
+  </div>
+  <div class="open-hint" id="hint">برای باز کردن هدیه، روی پاکت بزن 💌</div>
+
+  <section class="letter" id="letter">
+    <div class="roses">🌹 ✨ 🌹</div>
+    <h2>مامان باران جانم ❤️</h2>
+    <p>شاید هیچ کلمه‌ای نتواند اندازه عشقی را که به تو دارم بیان کند؛ اما می‌خواهم بدانی که بودنت بزرگ‌ترین نعمت زندگی من است.</p>
+    <p>ممنونم برای تمام مهربانی‌ها، صبوری‌ها، دعاها و آغوش گرمت. هر جا که باشم، عشق تو چراغ راه من است.</p>
+    <p>امیدوارم همیشه دلت شاد، لبخندت ماندگار و روزهایت پر از آرامش باشد. آرزو می‌کنم بتوانم ذره‌ای از تمام خوبی‌هایت را جبران کنم.</p>
+    <p class="signature">روزت مبارک، فرشته‌ی من<br>با تمام عشق دنیا، از طرف فرزندت 💗</p>
+  </section>
+
+  <div class="actions">
+    <button onclick="toggleMusic()" id="musicBtn">♫ پخش موسیقی آرام</button>
+    <button class="secondary" onclick="showNote()">🎁 باز کردن پیام مخفی</button>
+    <button class="secondary" onclick="makeHearts()">💖 باران قلب‌ها</button>
+  </div>
+  <div class="hidden-note" id="secret">مامان جان، حتی اگر تمام دنیا را بگردم، هیچ‌کس جای تو را در قلبم نمی‌گیرد. دوستت دارم، بیشتر از تمام واژه‌ها. ❤️</div>
+  <footer>با عشق ساخته شده برای مامان باران 🌸</footer>
+</main>
+<script>
+let opened=false, audioCtx=null, musicTimer=null, noteIndex=0;
+function openLetter(){
+  if(opened)return; opened=true;
+  document.getElementById('scene').classList.add('open');
+  document.getElementById('hint').textContent='این نامه فقط برای توست، مامان جان ❤️';
+  setTimeout(()=>{document.getElementById('letter').scrollIntoView({behavior:'smooth',block:'center'});makeHearts();},450);
+}
+function showNote(){document.getElementById('secret').classList.toggle('show');makeHearts();}
+function makeHearts(){
+  const symbols=['💗','💕','🌸','✨','💖'];
+  for(let i=0;i<18;i++){
+    const e=document.createElement('span');e.className='heart';e.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    e.style.left=Math.random()*100+'vw';e.style.fontSize=(16+Math.random()*18)+'px';e.style.animationDuration=(4+Math.random()*4)+'s';
+    document.body.appendChild(e);setTimeout(()=>e.remove(),8500);
+  }
+}
+function toggleMusic(){
+  const btn=document.getElementById('musicBtn');
+  if(musicTimer){clearInterval(musicTimer);musicTimer=null;if(audioCtx){audioCtx.close();audioCtx=null;}btn.textContent='♫ پخش موسیقی آرام';return;}
+  const AC=window.AudioContext||window.webkitAudioContext;
+  if(!AC){btn.textContent='مرورگر از پخش صدا پشتیبانی نمی‌کند';return;}
+  audioCtx=new AC();let i=0;
+  const notes=[261.63,329.63,392,329.63,293.66,349.23,440,349.23];
+  function play(){
+    if(!audioCtx)return;
+    const osc=audioCtx.createOscillator(),gain=audioCtx.createGain();
+    osc.type='sine';osc.frequency.value=notes[i%notes.length];
+    gain.gain.setValueAtTime(0.0001,audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.045,audioCtx.currentTime+0.08);
+    gain.gain.exponentialRampToValueAtTime(0.0001,audioCtx.currentTime+0.8);
+    osc.connect(gain);gain.connect(audioCtx.destination);osc.start();osc.stop(audioCtx.currentTime+0.85);i++;
+  }
+  play();musicTimer=setInterval(play,900);btn.textContent='■ توقف موسیقی';
+}
+</script>
+</body>
+</html>
